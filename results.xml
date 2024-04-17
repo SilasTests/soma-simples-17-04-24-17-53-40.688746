@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="3" time="0.037" timestamp="2024-04-17T17:54:04.844657" hostname="fv-az891-760"><testcase classname="test_file" name="test_case_0" time="0.001" /><testcase classname="test_file" name="test_case_1" time="0.001" /><testcase classname="test_file" name="test_case_2" time="0.001"><failure message="AssertionError: assert '-15' == '-5'&#10;  &#10;  - -5&#10;  + -15&#10;  ?  +">def test_case_2():
+        input_data = "-10 -5"
+        expected_result = "-5"
+        cast_type = type(expected_result)
+    
+        result = subprocess.run(
+            "./main",
+            input=input_data.encode(),
+            stdout=subprocess.PIPE,
+        )
+&gt;       assert cast_type(result.stdout.decode()) == expected_result
+E       AssertionError: assert '-15' == '-5'
+E         
+E         - -5
+E         + -15
+E         ?  +
+
+test_file.py:38: AssertionError</failure></testcase></testsuite></testsuites>
